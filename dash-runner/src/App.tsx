@@ -32,17 +32,20 @@ import {
   WorldId,
 } from './game/types';
 import {
+  CHALLENGE_ROSE_TARGETS,
   COSTUMES,
   COSTUME_MAP,
+  DEFAULT_GIFTS,
   WORLD_MAP,
   WORLDS,
   createRandomChallengeStages,
 } from './game/worlds';
 
 const STORAGE_KEY = 'gift_runner_save_v1';
-const CHALLENGE_STORAGE_KEY = 'gift_runner_challenge_v1';
-// Set to false before sharing with your wife so she cannot open the gift editor beforehand
-const SHOW_GIFT_EDITOR = true;
+const CHALLENGE_STORAGE_KEY = 'gift_runner_challenge_v2';
+const DEFAULT_GIFTS_SIGNATURE = JSON.stringify({ DEFAULT_GIFTS, CHALLENGE_ROSE_TARGETS });
+// Set to true if you want the Customize Gifts button visible
+const SHOW_GIFT_EDITOR = false;
 
 type ScreenView = 'HOME' | 'GAME';
 
@@ -79,9 +82,14 @@ function loadChallengeStages(): ChallengeStage[] {
   try {
     const raw = localStorage.getItem(CHALLENGE_STORAGE_KEY);
     if (!raw) return createRandomChallengeStages();
-    const parsed = JSON.parse(raw) as ChallengeStage[];
-    if (Array.isArray(parsed) && parsed.length === 5) {
-      return parsed;
+    const parsed = JSON.parse(raw) as { signature?: string; stages?: ChallengeStage[] };
+    if (
+      parsed &&
+      parsed.signature === DEFAULT_GIFTS_SIGNATURE &&
+      Array.isArray(parsed.stages) &&
+      parsed.stages.length === 5
+    ) {
+      return parsed.stages;
     }
   } catch {
     // Fall back to fresh random stages
@@ -91,7 +99,10 @@ function loadChallengeStages(): ChallengeStage[] {
 
 function saveChallengeStages(stages: ChallengeStage[]): void {
   try {
-    localStorage.setItem(CHALLENGE_STORAGE_KEY, JSON.stringify(stages));
+    localStorage.setItem(
+      CHALLENGE_STORAGE_KEY,
+      JSON.stringify({ signature: DEFAULT_GIFTS_SIGNATURE, stages })
+    );
   } catch {
     // Ignore storage quota errors cleanly
   }
