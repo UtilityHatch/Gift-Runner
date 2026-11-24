@@ -274,34 +274,39 @@ export const COSTUME_MAP: Record<CostumeId, CostumeDefinition> = Object.fromEntr
  */
 export const DEFAULT_GIFTS: GiftRewardConfig[] = [
   {
-    giftType: 'emoji',
+    giftType: 'image',
     emoji: '💐',
-    title: 'Rose Bouquet',
+    imageDataUrl: './gifts/stage1.png',
+    title: 'Surprise 1',
     message: 'You cleared the first challenge stage!',
   },
   {
-    giftType: 'emoji',
+    giftType: 'image',
     emoji: '🍫',
-    title: 'Sweet Treat',
+    imageDataUrl: './gifts/stage2.png',
+    title: 'Surprise 2',
     message: 'A sweet reward for your second sprint!',
   },
   {
-    giftType: 'emoji',
+    giftType: 'image',
     emoji: '🧸',
-    title: 'Plush Keepsake',
+    imageDataUrl: './gifts/stage3.png',
+    title: 'Surprise 3',
     message: 'Halfway through the 5-world challenge!',
   },
   {
-    giftType: 'emoji',
+    giftType: 'image',
     emoji: '💌',
-    title: 'Special Note',
+    imageDataUrl: './gifts/stage4.png',
+    title: 'Surprise 4',
     message: 'Almost there—one final world left!',
   },
   {
-    giftType: 'emoji',
+    giftType: 'image',
     emoji: '💍',
+    imageDataUrl: './gifts/stage5.png',
     title: 'Grand Finale Gift',
-    message: 'You conquered all 5 random challenge worlds!',
+    message: 'You conquered all 5 challenge worlds!',
   },
 ];
 
