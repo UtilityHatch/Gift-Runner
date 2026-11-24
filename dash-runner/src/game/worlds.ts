@@ -278,7 +278,7 @@ export const DEFAULT_GIFTS: GiftRewardConfig[] = [
   {
     giftType: 'image',
     emoji: '💐',
-    imageDataUrl: './gifts/stage1.png',
+    imageDataUrl: './gifts/stage1.gif',
     title: 'Surprise 1',
     message: 'You cleared the first challenge stage!',
   },
