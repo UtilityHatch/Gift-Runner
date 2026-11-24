@@ -265,12 +265,14 @@ export const COSTUME_MAP: Record<CostumeId, CostumeDefinition> = Object.fromEntr
 ) as Record<CostumeId, CostumeDefinition>;
 
 /**
- * Built-in rewards for Stages 1-5.
- * To add your own gift images on GitHub:
- * 1. Upload images into `public/gifts/` (e.g. `stage1.jpg` ... `stage5.jpg`).
- * 2. On any stage below, change `giftType: 'emoji'` to `giftType: 'image'`
- *    and add `imageDataUrl: './gifts/stage1.jpg'`.
- * 3. After playing, delete `public/gifts/*` and change `giftType` back to `'emoji'`.
+ * GIFT NOTES (ignored by the game):
+ * - Use an image or GIF:
+ *     giftType: 'image', then displays the file at below
+ *     imageDataUrl: './gifts/stage4.png', // or .gif or jpg
+ *
+ * - Switch back to emoji:
+ *     Change giftType to 'emoji' and DELETE the imageDataUrl line
+ *     (do NOT write 'emoji' inside imageDataUrl).
  */
 export const DEFAULT_GIFTS: GiftRewardConfig[] = [
   {
