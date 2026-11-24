@@ -1,0 +1,6 @@
+{
+  "name": "Sora Dash",
+  "description": "A fast-paced 2D endless anime runner game inspired by the classic web Dino runner.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
