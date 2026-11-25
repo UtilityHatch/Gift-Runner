@@ -300,7 +300,7 @@ export const DEFAULT_GIFTS: GiftRewardConfig[] = [
     giftType: 'image',
     emoji: '💌',
     imageDataUrl: './gifts/stage4.gif',
-    title: 'I LOVE YOUR',
+    title: 'I LOVE YOU',
     message: 'Almost there—one final world left!',
   },
   {
