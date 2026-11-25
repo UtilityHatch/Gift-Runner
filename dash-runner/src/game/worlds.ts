@@ -279,40 +279,40 @@ export const DEFAULT_GIFTS: GiftRewardConfig[] = [
     giftType: 'image',
     emoji: '💐',
     imageDataUrl: './gifts/stage1.gif',
-    title: 'Surprise 1',
+    title: 'I am waiting for you',
     message: 'You cleared the first challenge stage!',
   },
   {
     giftType: 'image',
     emoji: '🍫',
-    imageDataUrl: './gifts/stage2.png',
-    title: 'Surprise 2',
+    imageDataUrl: './gifts/stage2.gif',
+    title: 'Baobei you can do it',
     message: 'A sweet reward for your second sprint!',
   },
   {
     giftType: 'image',
     emoji: '🧸',
-    imageDataUrl: './gifts/stage3.png',
-    title: 'Surprise 3',
+    imageDataUrl: './gifts/stage3.gif',
+    title: 'Baobei Keep it up',
     message: 'Halfway through the 5-world challenge!',
   },
   {
     giftType: 'image',
     emoji: '💌',
-    imageDataUrl: './gifts/stage4.png',
-    title: 'Surprise 4',
+    imageDataUrl: './gifts/stage4.gif',
+    title: 'I LOVE YOUR',
     message: 'Almost there—one final world left!',
   },
   {
     giftType: 'image',
     emoji: '💍',
-    imageDataUrl: './gifts/stage5.png',
-    title: 'Grand Finale Gift',
+    imageDataUrl: './gifts/stage5.gif',
+    title: 'Happy 22th Anniversary',
     message: 'You conquered all 5 challenge worlds!',
   },
 ];
 
-export const CHALLENGE_ROSE_TARGETS = [8, 12, 15, 20, 25];
+export const CHALLENGE_ROSE_TARGETS = [8, 10, 17, 21, 22];
 
 export function pickFiveRandomWorlds(): WorldId[] {
   const pool = WORLDS.map((w) => w.id);
